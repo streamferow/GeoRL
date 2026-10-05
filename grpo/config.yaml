@@ -1,0 +1,25 @@
+model:
+  model_id: "Qwen/Qwen2-VL-2B-Instruct"
+  dtype: bfloat16
+  device_map: mps
+  trust_remote_code: true
+  cache_dir: ~/.cache/huggingface/transformers
+
+processor:
+  min_pixels: null
+  max_pixels: null
+  padding: true
+  add_generation_prompt: true
+
+rollout:
+  num_generations: 8
+  max_new_tokens: 512
+  temperature: 0.7
+  top_p: 0.95
+  top_k: 50
+  skip_special_tokens: true
+
+grpo:
+  learning_rate: 1.0e-5
+  clip_eps: 0.2
+  kl_coef: 0.01
